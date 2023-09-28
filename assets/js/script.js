@@ -1,6 +1,6 @@
 "use strict";
 
-
+import { base64 } from './modules/base64.js'
 import { getData } from "./modules/getServerData.js";
 import {renderItems} from "../js/modules/render.js";
 import {popupControl, formControl, deleteFunction, editItemsFunction} from "./modules/starting.js";
@@ -19,6 +19,7 @@ const init = () => {
 	deleteFunction();
 	editItemsFunction();
 	filter();
+	base64();
 }
 
 init();

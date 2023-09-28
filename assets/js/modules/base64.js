@@ -1,8 +1,8 @@
 'use strict'
-export default base64 = () => {
-    const file = document.querySelector('.file');
-    const preview = document.querySelector('.preview');
-    const form = document.querySelector('.form-input');
+export const base64 = () => {
+    const file = document.querySelector('.add-img');
+    const preview = document.querySelector('.preview-image');
+    const form = document.querySelector('.pop-up__main');
 
     const toBase64 = file => new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -38,7 +38,7 @@ export default base64 = () => {
         data.image = await toBase64(data.image)
         console.log('data', data);
 
-        fetch ('https://peppered-lake-thing.glitch.me/api/goods',{
+        fetch ('https://peppered-lake-thing.glitch.me/image/',{
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

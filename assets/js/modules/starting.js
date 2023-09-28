@@ -15,6 +15,7 @@ const popupControl = (addProductBtn, closeBtn, popup) => {
 	const price = document.querySelector(".textarea-price");
 	const footerSum = document.querySelector(".footer-sum");
 	const checkbox = document.querySelector(".checkbox");
+	// const preview = document.
 	addProductBtn.addEventListener('click', e => {
 		popup.classList.add("active");
 		e.stopPropagation();
