@@ -1,8 +1,9 @@
 'use strict'
 export const base64 = () => {
     const file = document.querySelector('.add-img');
-    const preview = document.querySelector('.preview-image');
+    const preview = document.querySelector('.preview-img');
     const form = document.querySelector('.pop-up__main');
+    const wrapper = document.querySelector('.error-wrapper');
 
     const toBase64 = file => new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -18,14 +19,18 @@ export const base64 = () => {
     });
 
     file.addEventListener('change', async( ) => {
-        if(file.files.length > 0){
+        if(file.files.length > 0 && file.files[0].size < 1048576){
             const src = URL.createObjectURL(file.files[0]);
             preview.style.display = 'block';
             preview.src = src;
-            document.body.style.backgroundImage = `url(${src})`
+            // document.body.style.backgroundImage = `url(${src})`
+            wrapper.textContent = '';
+        }else{
+            wrapper.classList.add('error');
+            wrapper.textContent = 'изображение не должно превышать размер 1 мб';
+            preview.removeAttribute('src');
+            
         }
-
-        // console.log(file.files);
     });
 
     form.addEventListener('submit',async event => {
