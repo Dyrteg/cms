@@ -111,15 +111,15 @@ body {
 .add-product-btn {
     background-color: #6D5BD0;
     border-radius: 6px;
-    padding: 10px 15px;
+    padding: 10px 15px 10px 16px;
     cursor: pointer;
-}
-.add-product-btn-text {
     font-weight: 600;
-    line-height: 19px;
     text-transform: uppercase;
     color: #fff;
+    border: 1px solid #6D5BD0;
+    font-size: 16px;
 }
+
 .main__table-body {
     width: 100%;
     border-spacing: 0px;
@@ -372,7 +372,7 @@ line-height: 29px;
 .item {
     border-bottom: 1px solid red;
 }
-.id, .name, .category, .units, .amount, .price, .total, .imageIcon, .editIcon, .deleteIcon {
+.id, .title, .category, .units, .count, .price, .total, .buttons__wrapper {
     padding: 21px 0 22px 0;
     text-align: center;
     border-bottom: 1px solid #D9D5EC;
@@ -449,4 +449,42 @@ input[type="file"] {
 .close-message {
     cursor: pointer;
     z-index: 99;
+}
+
+.control__btn{
+    width: 6px;
+    height: 10px;
+    background: transparent;
+    border:1px solid transparent;
+}
+
+.page-btns{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.wrapper-btn{
+    border: 0px;
+    cursor: pointer;
+}
+
+.input{
+    width: 250px;
+    height: 40px;
+}
+
+/* .preview-img{
+    width: 200px;
+    height: 200px;
+} */
+
+.error{
+    color: #D80101;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
 }

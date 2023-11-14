@@ -1,36 +1,16 @@
-"use strict";
+import { getData } from "./modules/getData.js";
+import { renderGoods } from "./modules/renderRow.js";
+import { pagination } from "./modules/pagination.js";
+import { openModal } from "./modules/modal.js";
+import { total } from "./modules/total.js";
+import { base64 } from "./modules/base64.js";
 
+const URL_GOODS = 'https://peppered-lake-thing.glitch.me/api/goods';
+const data = await getData(URL_GOODS);
+const fullLength = 17;
 
-import { getData } from "./modules/getServerData.js";
-import {renderItems} from "../js/modules/render.js";
-import {popupControl, formControl, deleteFunction, editItemsFunction} from "./modules/starting.js";
-import {filter} from "../js/modules/filter.js";
-
-let addProductBtn = document.querySelector(".add-product-btn");
-let popup = document.querySelector(".pop-up");
-let closeBtn = document.querySelector(".pop-up__close");
-const form = document.querySelector(".pop-up__main");
-const data = await getData();
-
-const init = () => {
-	popupControl(addProductBtn, closeBtn, popup);
-	renderItems();
-	formControl(form, data);
-	deleteFunction();
-	editItemsFunction();
-	filter();
-}
-
-init();
-
-export {data, popup}
-
-
-
-
-
-
-
-
-
-
+renderGoods(data,10,fullLength);
+pagination(data);
+openModal();
+total(data);
+// getData()

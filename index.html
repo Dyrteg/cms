@@ -26,108 +26,40 @@
                             <input class="table-search-input" placeholder="Поиск по наименованию" id="input">
                         </div>
                     </div>
-                    <div class="add-product-btn">
-                        <p class="add-product-btn-text">добавить товар</p>
-                    </div>
+                    <button class="add-product-btn">
+                        добавить товар
+                    </button>
                 </div>
                 <table class="main__table-body">
                     <thead><tr><th>id</th><th>наименование</th><th>категория</th><th>ед/изм</th><th>количество</th><th>цена</th><th>итог</th><th></th><th></th><th></th></tr></thead>
-                    <tbody class="tbody"></tbody>
+                    <tbody class="tbody">
+                    </tbody>
                 </table>
                 <div class="main__table-footer">
                     <div class="footer-items">
                         <div class="page-setting">
-                            <p class="page-setting-text">Показывать на странице: 10</p>
+                            <label for="number">
+                                Показывать на странице:
+                                <select name="" id="number" class="number">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </label>
                         </div>
                         <div class="page-number">
-                            <p class="page-number-text">1-10 of 276</p>
                         </div>
                         <div class="page-btns">
-                            <img class="left-btn" src="assets/img/Vector.png">
-                            <img class="right-btn" src="assets/img/Vector-1.png">
+                            <button class="control__btn left-btn"><img class="left-btn_image" src="assets/img/Vector.png"></button>
+                            <button class="control__btn right-btn"><img class="right-btn_image" src="assets/img/Vector-1.png"></button>
                         </div>
                     </div>
                 </div>
                 
             </section>
-
-            <div class="pop-up">
-                <img class="pop-up__close" src="assets/img/Group 85.svg">
-                <div class="pop-up-container">
-                    
-                    <div class="pop-up__header">
-                        <h2 class="pop-up__title">Добавить товар</h2>
-                        
-                    </div>
-                    <form class="pop-up__main" method="post">
-
-                        <div class="left">
-                            <div class="name-input">
-                                <label>наименование</label>
-                                <textarea required class="textarea-name" name="title" oninput="deleteSpace(this)"></textarea>
-                            </div>
-                            <div class="category-input">
-                                <label>категория</label>
-                                <textarea required class="textarea-category" name="category" oninput="deleteSpace(this)"></textarea>
-                            </div>
-                            <div class="units-input">
-                                <label>единицы измерения</label>
-                                <textarea required class="textarea-units" name="units" oninput="deleteSpace(this)"></textarea>
-                            </div>
-                            <div class="discount-input">
-                                <label>discount</label>
-                                <div class="group">
-                                    <input class="checkbox" type="checkbox">
-                                    <textarea disabled pattern="[0-9]{11}" class="textarea-discount" name="discount"  oninput="toNumber(this)"></textarea>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="description-input">
-                                <label>описание</label>
-                                <textarea required class="textarea-description" name="description" oninput="deleteSpace(this)"></textarea>
-                            </div>
-                            <div class="amount-input">
-                                <label>Количество</label>
-                                <textarea required class="textarea-amount" name="count" oninput="toNumber(this)"></textarea>
-                            </div>
-                            <div class="price-input">
-                                <label>цена</label>
-                                <textarea required class="textarea-price" name="price" oninput="toNumber(this)"></textarea>
-                            </div>
-
-                            <label class="custom-file-upload">
-                                <input type="file" class="add-img"/>
-                                добавить изображение
-                            </label>
-                            
-                            <button class="footer__btn" type="submit">
-                                добавить товар
-                            </button>
-                        </div>
-                        
-                    </form>
-                    <div class="pop-up__footer">
-                        <p class="footer__sum">Итоговая стоимость: <span class="sum-icon">$</span><span class="footer-sum">0</span></p>
-                    </div>
-                </div>
-                
-            </div>
         </main>
         
     </div>
-    <script>
-        const toNumber = e => {
-	        const value = e.value;
-	        e.value = value.replace(/\D/g, '');
-        };
-        const deleteSpace = e => {
-            if (e.value.charAt(0) == ' ') {
-                e.value = "";
-            }
-        }
-    </script>
-    <script src="assets/js/script.js" type="module" defer></script>
+    <script src="./assets/js/script.js" type="module"></script>
 </body>
 </html>
