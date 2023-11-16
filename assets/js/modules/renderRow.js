@@ -4,7 +4,6 @@ export const renderGoods = (data, length, fullLength) => {
     const tbody = document.querySelector('tbody');
     const pageNumber = document.querySelector('.page-number');
     const allLength = fullLength;
-    pageNumber.textContent = `1 - ${length} of ${allLength}`
     data.length = length
     const goodsHTML = data.map(goods =>
         `

@@ -23,7 +23,6 @@ export const base64 = () => {
             const src = URL.createObjectURL(file.files[0]);
             preview.style.display = 'block';
             preview.src = src;
-            // document.body.style.backgroundImage = `url(${src})`
             wrapper.textContent = '';
         }else{
             wrapper.classList.add('error');
